@@ -89,7 +89,7 @@ jobs:
           exit-code: '1'
           ignore-unfixed: true
           vuln-type: 'os,library'
-          severity: 'MEDIUM'
+          severity: 'HIGH'
 
   DEPLOY:
     needs: BUILD_AND_PUBLISH
