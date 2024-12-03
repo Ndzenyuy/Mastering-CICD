@@ -1,6 +1,12 @@
 name: github Actions
 on: [push, workflow_dispatch]
-  
+env: 
+  AWS_REGION: us-east-1
+  ECR_REPOSITORY: github-actions
+  ECS_SERVICE: github-actions-svc
+  ECS_CLUSTER: github-actions
+  ECS_TASK_DEFINITION: aws-files/taskdeffile.json
+  CONTAINER_NAME: github   
 jobs: 
   Testing:
     runs-on: ubuntu-latest
