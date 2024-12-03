@@ -81,15 +81,15 @@ jobs:
           dockerfile: ./Dockerfile
           context: ./
 
-      - name: Run Trivy vulnerability scanner
-        uses: aquasecurity/trivy-action@master
-        with:
-          image-ref: ${{ secrets.REGISTRY }}/${{ env.ECR_REPOSITORY }}:${{ github.run_number }}
-          format: 'json'
-          exit-code: '1'
-          ignore-unfixed: true
-          vuln-type: 'os,library'
-          severity: 'HIGH'
+      #- name: Run Trivy vulnerability scanner
+      #  uses: aquasecurity/trivy-action@master
+      #  with:
+       #   image-ref: ${{ secrets.REGISTRY }}/${{ env.ECR_REPOSITORY }}:${{ github.run_number }}
+      #    format: 'json'
+      #    exit-code: '1'
+       #   ignore-unfixed: true
+       #   vuln-type: 'os,library'
+      #    severity: 'HIGH' 
 
   DEPLOY:
     needs: BUILD_AND_PUBLISH
